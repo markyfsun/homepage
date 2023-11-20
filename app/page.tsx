@@ -1,11 +1,11 @@
-import Image from 'next/image'
 import Link from "next/link";
 import ProductCard from "@/app/components/ProductCard/ProductCard";
 
 export default function Home() {
   return (
       <main>
-        <h1>hello world</h1>
+        <h1>Furry Visions, AI Missions</h1>
+          <h1>梦绘福瑞，智绘未来</h1>
         <Link href="/users">Users</Link>
           <ProductCard></ProductCard>
           <div className='prose'>
