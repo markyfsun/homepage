@@ -38,7 +38,7 @@ const Loading = () => {
         // @ts-ignore
         tl.to(wordRef.current.children, {
             autoAlpha: 1,
-            x: 0,
+            x: -50,
             duration: 1 - 0.05 * letters.length,
             stagger: {each: 0.05, from: "end"},
             ease: 'power3.out',
@@ -63,12 +63,12 @@ const Loading = () => {
     return (
         <div className="animation-container"
              style={{display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh'}}>
-            <div style={{marginRight: '20px', fontSize: '1.5rem'}}>
+            <div style={{marginRight: '20px', fontSize: '1.4rem'}}>
                 <div ref={line1}>Furry Visions</div>
                 <div ref={line2}>AI Missions</div>
             </div>
             <div ref={diagonalLine} style={{marginRight: '20px', fontSize: '2rem', lineHeight: '0'}}>/</div>
-            <div ref={wordRef} style={{display: 'flex', flexDirection: 'row', fontSize: '2rem',}}>
+            <div ref={wordRef} style={{display: 'flex', flexDirection: 'row', fontSize: '1.6rem',}}>
                 {Array.from(letters).map((letter, index) => (
                     <p key={index}>{letter}</p>
                 ))}
