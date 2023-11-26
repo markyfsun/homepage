@@ -12,6 +12,7 @@ const Loading = () => {
     const line2 = useRef(null);
     // Reference for the diagonal line
     const diagonalLine = useRef(null);
+    const constructRef = useRef(null);
 
     useEffect(() => {
 
@@ -55,6 +56,7 @@ const Loading = () => {
         // Animate each line separately
         tl.to(line1.current, {autoAlpha: 1, x: 20, duration: 1}, '+=0.2')
             .to(line2.current, {autoAlpha: 1, x: 20, duration: 1}, '+=0.3');
+        tl.fromTo(constructRef.current, {autoAlpha:0,position:'absolute',translateY: 100},{autoAlpha:1})
 
 
     }, []);
@@ -63,7 +65,7 @@ const Loading = () => {
     return (
         <div className="animation-container"
              style={{display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh'}}>
-            <div style={{marginRight: '20px', fontSize: '1.4rem',marginLeft: '5vw',}}>
+            <div style={{marginRight: '20px', fontSize: '1.4rem',marginLeft: '5vw',fontStyle: "italic"}}>
                 <div ref={line1}>Furry Visions</div>
                 <div ref={line2}>AI Missions</div>
             </div>
@@ -73,6 +75,7 @@ const Loading = () => {
                     <p key={index}>{letter}</p>
                 ))}
             </div>
+        <span ref={constructRef}>Website under construction🔨</span>
         </div>
     );
 };
