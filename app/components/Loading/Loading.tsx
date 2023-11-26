@@ -63,12 +63,12 @@ const Loading = () => {
     return (
         <div className="animation-container"
              style={{display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh'}}>
-            <div style={{marginRight: '20px', fontSize: '1.4rem'}}>
+            <div style={{marginRight: '20px', fontSize: '1.4rem',marginLeft: '5vw',}}>
                 <div ref={line1}>Furry Visions</div>
                 <div ref={line2}>AI Missions</div>
             </div>
             <div ref={diagonalLine} style={{marginRight: '20px', fontSize: '2rem', lineHeight: '0'}}>/</div>
-            <div ref={wordRef} style={{display: 'flex', flexDirection: 'row', fontSize: '1.6rem',}}>
+            <div ref={wordRef} style={{display: 'flex', flexDirection: 'row', fontSize: '1.6rem',marginRight: '5vw'}}>
                 {Array.from(letters).map((letter, index) => (
                     <p key={index}>{letter}</p>
                 ))}
