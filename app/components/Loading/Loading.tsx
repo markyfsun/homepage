@@ -1,6 +1,7 @@
 'use client';
 import React, {useEffect, useRef} from 'react';
 import gsap from 'gsap';
+import styles from './Loading.module.css';
 
 const Loading = () => {
     // Define letters as the string "SOME"
@@ -49,7 +50,7 @@ const Loading = () => {
             fontWeight: 'bold'
         });
         // @ts-ignore
-        tl.to(wordRef.current.children, {x: 20, duration: 0.5, scale: 1, marginRight: '5px'}, '+=.7');
+        tl.to(wordRef.current.children, {x: 20, duration: 0.5, scale: 1, marginRight: '5px'}, '+=.3');
 
         // Animate the diagonal line
         tl.to(diagonalLine.current, {autoAlpha: 1, x: 20, duration: .5}, '-=.2');
@@ -126,13 +127,12 @@ const Loading = () => {
 
     return (
         <div>
-            <div className="animation-container"
-                 style={{display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh'}}>
+            <div className={styles.animationContainer}>
                 <div style={{marginRight: '20px', fontSize: '1.4rem', marginLeft: '5vw', fontStyle: "italic"}}>
                     <div ref={line1}>Furry Visions</div>
                     <div ref={line2}>AI Missions</div>
                 </div>
-                <div ref={diagonalLine} style={{marginRight: '20px', fontSize: '2rem', lineHeight: '0'}}>/</div>
+                <div ref={diagonalLine} style={{marginRight: '20px', fontSize: '2rem'}}>/</div>
                 <div ref={wordRef}
                      style={{display: 'flex', flexDirection: 'row', fontSize: '1.6rem', marginRight: '5vw'}}>
 
@@ -142,7 +142,7 @@ const Loading = () => {
                 </div>
                 <span ref={constructRef}>Website under construction🔨</span>
             </div>
-            <svg xmlns="http://www.w3.org/2000/svg" style={{visibility: 'hidden'}} ref={logoRef} height="1.6rem"
+            <svg xmlns="http://www.w3.org/2000/svg" style={{visibility: 'hidden'}} ref={logoRef} height="1.8rem"
                  version="1.1" overflow="visible" viewBox="0 0 420 680">
                 <defs/>
                 <polygon fill="rgb(5,10,11)" points="40 20 60 20 60 0"></polygon>
